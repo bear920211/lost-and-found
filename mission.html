@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>尋寶任務</title>
+</head>
+<body>
+  <h2>🔍 今日任務：找到藍色鉛筆盒</h2>
+  <p>線索 1：最後出現在圖書館。</p>
+  <p>線索 2：有人在下課鐘聲後看見它。</p>
+
+  <form id="submitForm">
+    <label>你的名字：</label>
+    <input type="text" id="playerName" required>
+    <button type="submit">我找到失物！</button>
+  </form>
+
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

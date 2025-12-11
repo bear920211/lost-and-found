@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>Firebase 串接測試</title>
+</head>
+<body>
+  <h1>🔥 Firebase 串接測試頁面</h1>
+  <button onclick="testFirebase()">測試 Firestore</button>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+
+  <script>
+    // ⚠️ 請把這裡換成你自己的 firebaseConfig
+    const firebaseConfig = {
+      apiKey: "AIzaSyBhK6eruZ8MvzeC4K7gavQswmG1yhjc2Oo",
+      authDomain: "lost-and-1702f.firebaseapp.com",
+      projectId: "lost-and-1702f",
+      storageBucket: "lost-and-1702f.firebasestorage.app",
+      messagingSenderId: "1026381242748",
+      appId: "1:1026381242748:web:4b07b6c5d98b680ab504f9"
+    };
+
+    // 初始化 Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+
+    // 測試函式
+    async function testFirebase() {
+      try {
+        // 寫入一筆測試資料
+        await db.collection("scores").doc("測試玩家").set({
+          name: "測試玩家",
+          points: 99
+        });
+
+        // 讀取資料
+        const docSnap = await db.collection("scores").doc("測試玩家").get();
+        if (docSnap.exists) {
+          alert("✅ Firebase 串接成功！玩家分數：" + docSnap.data().points);
+        } else {
+          alert("❌ 讀取失敗，請檢查 Firestore 設定。");
+        }
+      } catch (error) {
+        alert("❌ Firebase 串接失敗：" + error.message);
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,4 +1,7 @@
 // 初始化 Firebase
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+
 const firebaseConfig = {
   apiKey: "AIzaSyBhK6eruZ8MvzeC4K7gavQswmG1yhjc2Oo",
   authDomain: "lost-and-1702f.firebaseapp.com",

@@ -1,11 +1,11 @@
 // 初始化 Firebase
 const firebaseConfig = {
-  apiKey: "你的API_KEY",
-  authDomain: "你的專案ID.firebaseapp.com",
-  projectId: "你的專案ID",
-  storageBucket: "你的專案ID.appspot.com",
-  messagingSenderId: "你的SenderID",
-  appId: "你的AppID"
+  apiKey: "AIzaSyBhK6eruZ8MvzeC4K7gavQswmG1yhjc2Oo",
+  authDomain: "lost-and-1702f.firebaseapp.com",
+  projectId: "lost-and-1702f",
+  storageBucket: "lost-and-1702f.firebasestorage.app",
+  messagingSenderId: "1026381242748",
+  appId: "1:1026381242748:web:4b07b6c5d98b680ab504f9"
 };
 
 firebase.initializeApp(firebaseConfig);
